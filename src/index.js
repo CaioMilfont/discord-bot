@@ -26,7 +26,13 @@ client.on('message', msg => {
 
     const command = args.shift().substr(1);
 
-    if (Object.keys(commands).includes(command)) commands[command](msg, args);
+    if (Object.keys(commands).includes(command)) {
+        try {
+            commands[command](msg, args);
+        } catch (err) {
+            console.log(err)
+        }
+    }
 });
 
 client.login(process.env.BOT_ID);
