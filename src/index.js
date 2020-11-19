@@ -26,7 +26,6 @@ client.on('message', msg => {
 
     const command = args.shift().substr(1);
 
-    //TODO: Fix vulnerability
     if (Object.keys(commands).includes(command)) commands[command](msg, args);
 });
 
