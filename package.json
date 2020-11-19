@@ -1,0 +1,27 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Bot para auxiliar links de Aulas",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioMilfont/discord-bot.git"
+  },
+  "keywords": [
+    "discord-bot"
+  ],
+  "author": "Caio Milfont",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaioMilfont/discord-bot/issues"
+  },
+  "homepage": "https://github.com/CaioMilfont/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
+  }
+}
