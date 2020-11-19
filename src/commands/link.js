@@ -5,7 +5,6 @@ const data = {
     '4': 'Projeto de Banco de Dados => https://meet.google.com/opd-wkyx-mgq'
 }
 
-
 module.exports = async (msg, args) => {
     msg.channel.send(`Aqui esta o Link da Aula ${args[1]} - ${data[args[1]]}`)
 }

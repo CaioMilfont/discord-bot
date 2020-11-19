@@ -5,9 +5,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const link = require('./commands/link.js')
+const help = require('./commands/help.js')
+
 
 const commands = {
-    link
+    link,
+    help
 }
 
 client.once('ready', () => {
@@ -24,7 +27,7 @@ client.on('message', msg => {
     const command = args.shift().substr(1);
 
     //TODO: Fix vulnerability
-    if (command in commands) commands[command](msg, args);
+    if (Object.keys(commands).includes(command)) commands[command](msg, args);
 });
 
 client.login(process.env.BOT_ID);
