@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test",
     "start": "node src/index.js",
-    "heroku-postbuild": "node src/index.js"
+    "heroku-postbuild": "node src/index.js --unhandled-rejections=strict"
   },
   "repository": {
     "type": "git",
