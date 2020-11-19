@@ -6,5 +6,9 @@ const data = {
 }
 
 module.exports = async (msg, args) => {
-    msg.channel.send(`Aqui esta o Link da Aula ${args[1]} - ${data[args[1]]}`)
+    if (args.length <= 1) {
+        msg.channel.send('Comando Inválido! Tente assim: !link aula (número da aula)')
+    }
+    else
+        msg.channel.send(`Aqui esta o Link da Aula ${args[1]} - ${data[args[1]]}`)
 }
