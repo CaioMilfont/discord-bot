@@ -4,14 +4,27 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-client.on('ready', () => {
+const link = require('./commands/link.js')
+
+const commands = {
+    link
+}
+
+client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
-    if (msg.content === 'ping') {
-        msg.reply('pong');
-    }
+    if (msg.channel.id !== process.env.CHANNEL_ID && msg.channel.guild.id !== process.env.GUILD_ID) return;
+
+    const args = msg.content.split(' ');
+
+    if (args === 0 || args[0].charAt(0) !== '!') return;
+
+    const command = args.shift().substr(1);
+
+    //TODO: Fix vulnerability
+    if (command in commands) commands[command](msg, args);
 });
 
 client.login(process.env.BOT_ID);
